@@ -2,6 +2,10 @@
 
 AUTHORING: 
 Grisha Goldberg
+CMSC 313
+Professor Kidd
+MonWed 2:30 - 3:45
+4/18/2025
 
 PURPOSE OF SOFTWARE: 
 To manage matrices and perform math operations (matrix addition, scalar matrix multiplication, matrix transposition, and matrix multiplication).
