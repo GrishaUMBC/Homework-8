@@ -31,17 +31,21 @@ public:
             int i;
             cin >> i;
             if (i == -1) {
+                // This would be to exit.
                 done = true;
             } else {
                 cout << "Enter column index (0-" << m_cols - 1 << ") or -1 to finish: ";
                 int j;
                 cin >> j;
                 if (j == -1) {
+                    // Exit
                     done = true;
                 } else {
+                    // Some validation.
                     if (i < 0 || i >= m_rows || j < 0 || j >= m_cols) {
                         cout << "Index out of range. Enter value: \n";
                     } else {
+                        // What is the element?
                         cout << "Enter value: ";
                         double value;
                         cin >> value;
@@ -71,6 +75,7 @@ public:
 
     // Print matrix
     void print() const {
+        // To beauty up the matrix.
         for (int i = 0; i < m_rows; ++i) {
             cout << "[";
             for (int j = 0; j < m_cols; ++j) {
@@ -118,6 +123,7 @@ Matrix scalarMultiply(const Matrix& A, double scalar) {
 // Multiply two matrices
 Matrix multiply(const Matrix& A, const Matrix& B) {
     if (A.getCols() != B.getRows()) {
+        // Inside dimensions need to match.
         exit(1);
     }
     Matrix result(A.getRows(), B.getCols());
@@ -138,6 +144,7 @@ Matrix transpose(const Matrix& A) {
     Matrix result(A.getCols(), A.getRows());
     for (int i = 0; i < A.getRows(); ++i) {
         for (int j = 0; j < A.getCols(); ++j) {
+            // Does the swapping.
             result.data()[j][i] = A.data()[i][j];
         }
     }
