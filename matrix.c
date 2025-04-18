@@ -36,7 +36,9 @@ Matrix *createMatrix(int rows, int cols) {
 
 // Free a matrix
 void freeMatrix(Matrix *m) {
-    if (!m) return;
+    if (!m) {
+        return;
+    }
     free(m->data);
     free(m);
 }
@@ -56,12 +58,12 @@ int setElement(Matrix *m, int row, int col, double value) {
     return 1;
 }
 
-// Print matrix with %g so you only get as many decimals as needed 
+// Print matrix with %g for formatting. 
+// I think this is the right way to do it.
 void printMatrix(const Matrix *m) {
     for (int i = 0; i < m->rows; ++i) {
         printf("[");
         for (int j = 0; j < m->cols; ++j) {
-            // I think this is the right way to format the print statement.
             printf("%g", m->data[getIndex(m, i, j)]);
             if (j < m->cols - 1) printf(" ");
         }
@@ -127,7 +129,9 @@ Matrix *transposeMatrix(const Matrix *A) {
 
 int testCreateAndSet(void) {
     Matrix *M = createMatrix(2, 2);
-    if (!M || M->rows != 2 || M->cols != 2) return 0;
+    if (!M || M->rows != 2 || M->cols != 2) {
+        return 0;
+    }
     
     // setElement valid
     if (!setElement(M, 1, 1, 4.2) ||
@@ -294,7 +298,7 @@ int main(void) {
         return 1;
     }
     if (!testScalarAndMultiply()) {
-        printf("testScalarAndMul Failed\n");
+        printf("testScalarAndMultiply Failed\n");
         return 1;
     }
     if (!testTranspose()) {
@@ -302,7 +306,7 @@ int main(void) {
         return 1;
     }
 
-    printf("ALL TESTS PASSED\n");
+    printf("All Tests Passed\n");
     return 0;
 
     */
