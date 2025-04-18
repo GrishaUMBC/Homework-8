@@ -19,6 +19,7 @@ matrix.c:
 1. "gcc -std=c99 -o0 matrix.c"
 
 TESTING METHODOLOGY:
+matrix.cpp: uncomment the code withing main and set elements for each test.
 
 ADDITIONAL INFORMATION:
 Good luck grading! I hope I did everything right.
