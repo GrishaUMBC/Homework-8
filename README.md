@@ -20,7 +20,9 @@ matrix.c:
 2. "./0"
 
 TESTING METHODOLOGY:
-matrix.cpp: uncomment the code withing main and set elements for each test.
+matrix.cpp: uncomment the code within main and set elements for each test.
+
+matrix.c: just uncomment the code in main and run.
 
 ADDITIONAL INFORMATION:
 Good luck grading! I hope I did everything right.
