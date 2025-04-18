@@ -17,6 +17,7 @@ matrix.cpp:
 2. "./matrix"
 matrix.c:
 1. "gcc -std=c99 -o0 matrix.c"
+2. "./0"
 
 TESTING METHODOLOGY:
 matrix.cpp: uncomment the code withing main and set elements for each test.
