@@ -2,13 +2,23 @@
 
 AUTHORING: 
 Grisha Goldberg
+
 PURPOSE OF SOFTWARE: 
 To manage matrices and perform math operations (matrix addition, scalar matrix multiplication, matrix transposition, and matrix multiplication).
+
 FILES: 
+README.md
+matrix.cpp
+matrix.c
 
 BUILD INSTRUCTIONS:
-gcc -std=c99 -o0 myBrogram.c
+matrix.cpp: 
+1. "g++ -Wall matrix.cpp -o matrix"
+2. "./matrix"
+matrix.c:
+1. "gcc -std=c99 -o0 matrix.c"
 
 TESTING METHODOLOGY:
 
 ADDITIONAL INFORMATION:
+Good luck grading! I hope I did everything right.
