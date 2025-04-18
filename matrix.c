@@ -14,7 +14,7 @@ typedef struct {
     double *data;
 } Matrix;
 
-// Allocate memory for matrix
+// Allocate memory for matrix.
 Matrix *createMatrix(int rows, int cols) {
     Matrix *m = malloc(sizeof *m);
     if (!m) {
@@ -34,7 +34,7 @@ Matrix *createMatrix(int rows, int cols) {
     return m;
 }
 
-// Free a matrix
+// Free a matrix.
 void freeMatrix(Matrix *m) {
     if (!m) {
         return;
@@ -43,12 +43,12 @@ void freeMatrix(Matrix *m) {
     free(m);
 }
 
-// Return the index
+// Return the index.
 int getIndex(const Matrix *m, int r, int c) {
     return r * m->cols + c;
 }
 
-// Direct element modification
+// Direct element modification.
 int setElement(Matrix *m, int row, int col, double value) {
     if (row < 0 || row >= m->rows || col < 0 || col >= m->cols) {
         printf("Index out of range.\n");
@@ -71,7 +71,7 @@ void printMatrix(const Matrix *m) {
     }
 }
 
-// Add two matrices
+// Add two matrices.
 Matrix *addMatrix(const Matrix *A, const Matrix *B) {
     if (A->rows != B->rows || A->cols != B->cols) {
         printf("Dimension mismatch in add\n");
@@ -85,7 +85,7 @@ Matrix *addMatrix(const Matrix *A, const Matrix *B) {
     return R;
 }
 
-// Multiply matrix by scalar
+// Multiply matrix by scalar.
 Matrix *scalarMultiply(const Matrix *A, double s) {
     Matrix *R = createMatrix(A->rows, A->cols);
     int n = A->rows * A->cols;
@@ -125,7 +125,7 @@ Matrix *transposeMatrix(const Matrix *A) {
     return R;
 }
 
-// Here are all of my tests.
+// Here are all of my tests
 
 int testCreateAndSet(void) {
     Matrix *M = createMatrix(2, 2);
