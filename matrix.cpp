@@ -151,6 +151,30 @@ Matrix transpose(const Matrix& A) {
     return result;
 }
 
+// This is for testing purposes. You will see in main.
+Matrix createMatrixInteractive(const string& name) {
+    int rows;
+    do {
+        cout << "Enter rows for " << name << ": ";
+        cin >> rows;
+        if (rows <= 0) cout << "  Please enter a positive number.\n";
+    } while (rows <= 0);
+
+    int cols;
+    do {
+        cout << "Enter cols for " << name << ": ";
+        cin >> cols;
+        if (cols <= 0) cout << "  Please enter a positive number.\n";
+    } while (cols <= 0);
+
+    Matrix M(rows, cols);
+    cout << "Enter elements for " << name << ":\n";
+    M.setElementInteractive();
+    cout << name << " =\n";
+    M.print();
+    return M;
+}
+
 int main() {
     // I hard coded in the specific example that was asked to be solved.
     // However, because Professor Kidd said it should be versatile for
@@ -196,6 +220,54 @@ int main() {
 
     cout << "Result: " << endl;
     D.print();
+
+    /* 
+    
+    // For testing, you can uncomment this code
+    //********************************************************************************
+        
+    cout << "Matrix Tests\n";
+
+    // Addition test
+    cout << "\n[A + B] Test\n";
+    {
+        Matrix A = createMatrixInteractive("A");
+        Matrix B = createMatrixInteractive("B");
+        cout << "A + B =\n";
+        add(A, B).print();
+    }
+
+    // Scalar multiplication test
+    cout << "\n[s * A] Test\n";
+    {
+        Matrix A = createMatrixInteractive("A");
+        double s;
+        cout << "Enter scalar s: ";
+        cin >> s;
+        cout << s << " * A =\n";
+        scalarMultiply(A, s).print();
+    }
+
+    // Multiplication test
+    cout << "\n[A * B] Test\n";
+    {
+        Matrix A = createMatrixInteractive("A");
+        Matrix B = createMatrixInteractive("B");
+        cout << "A * B =\n";
+        multiply(A, B).print();
+    }
+
+    // Transpose test
+    cout << "\n[A^T] Test\n";
+    {
+        Matrix A = createMatrixInteractive("A");
+        cout << "A^T =\n";
+        transpose(A).print();
+    }
+
+    cout << "\nAll tests complete!\n";
+
+    */
 
     return 0;
 }
